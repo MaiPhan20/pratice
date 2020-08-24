@@ -93,9 +93,16 @@ BEGIN
 SELECT CommentID,Status,Author,,CreateTime,Email
 FROm Comments
 ENd
---1111.Create a trigger nammed tg_UpdateTime to automatic update UpdateTime column
+--11.Create a trigger nammed tg_UpdateTime to automatic update UpdateTime column
 --in the Posts table to current time when the record in this table is updated.
-
+CREATE TRIGGER TG_Updatetime ON Posts
+AFTER UPDATE
+AS 
+BEGIN
+UPDATE Y
+SET Updatetime= CURRENT_TIMESTAMP
+FROm Posts
+END
 
 
 
